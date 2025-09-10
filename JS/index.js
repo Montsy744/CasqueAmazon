@@ -14,3 +14,31 @@ compte.addEventListener('click', () => {
 panier.addEventListener('click', () => {
   window.open('https://www.amazon.fr/-/en/gp/cart/view.html?ref_=nav_cart');
 });
+
+window.addEventListener("load", () => {
+  const imgCasque = document.querySelector("#imgCasque");
+
+  // cacher au départ
+  imgCasque.style.opacity = 0;
+
+
+  // apparition après 3 secondes
+  setTimeout(() => {
+    imgCasque.style.opacity = 1;
+  }, 3000);
+});
+
+
+window.addEventListener('scroll', function () {
+    let scrolled = window.scrollY; // Récupère la position du défilement vertical
+    let parallaxElements = document.querySelectorAll('.parallax'); // Sélectionne tous les éléments parallax
+
+    // calcule un scale réaliste
+    let scale = 1 - scrolled / 1000;
+    if (scale < 0.6) scale = 0.6;
+
+    parallaxElements.forEach(function (element) {
+
+        element.style.transform = `translateY(${scrolled * 0.8}px) scale(${scale})`;
+    });
+});

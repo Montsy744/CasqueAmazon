@@ -108,16 +108,24 @@ header {
     font-family: 'grandTitre';
 }
 
-#casque {
+#imgCasque {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
 
     z-index: 2;
     width: 700px;
     height: 700px;
+
+    opacity: 0;
+    transition: opacity 1.5s ease; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 #un {
     grid-row: 1;
@@ -200,6 +208,28 @@ header {
     clip-path: inset(100% 0% 0% 0%); /* caché au départ */
     animation: revealClip 0.5s forwards;
     animation-delay: 0.5s;
+}
+
+.reavealTraitHeader {
+    clip-path: inset(0% 100% 0% 0%); /* caché au départ */
+    animation: revealClip 1.5s forwards;
+    animation-delay: 1.7s;
+}
+
+.reavealDivHeader1 {
+    clip-path: inset(0% 100% 0% 0%); /* caché au départ */
+    animation: revealClip 0.6s forwards;
+    animation-delay: 1.7s;
+}
+.reavealDivHeader2 {
+    clip-path: inset(0% 100% 0% 0%); /* caché au départ */
+    animation: revealClip 0.6s forwards;
+    animation-delay: 2.3s;
+}
+.reavealDivHeader3 {
+    clip-path: inset(0% 100% 0% 0%); /* caché au départ */
+    animation: revealClip 0.6s forwards;
+    animation-delay: 2.9s;
 }
 
 @keyframes revealClip {
