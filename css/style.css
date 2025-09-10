@@ -186,6 +186,19 @@ header {
     font-size: 1.3rem;
 }
 
+#imageMoto {
+    width: 33.33%;
+    position: absolute;
+
+    bottom: -95%;
+    left: 2%;
+}
+
+#imageMoto img {
+    width: 90%;
+    border-radius: 10px;
+}
+
 #un {
     grid-row: 1;
     grid-column: 2;
