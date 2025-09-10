@@ -13,6 +13,11 @@
     src: url('./../public/police/Silkscreen-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'paragraphe';
+    src: url('./../public/police/Iceland-Regular.ttf');
+}
+
 body {
     background-color: #F3F0ED;
     display: grid;
@@ -165,6 +170,8 @@ header {
 
 #Apropos1 ul li {
     padding-bottom: 10px;
+    font-family: 'paragraphe';
+    font-size: 1.3rem;
 }
 
 #Apropos2 {
@@ -175,6 +182,8 @@ header {
 
 #Apropos2 ul li {
     padding-bottom: 10px;
+    font-family: 'paragraphe';
+    font-size: 1.3rem;
 }
 
 #un {
