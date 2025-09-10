@@ -126,6 +126,56 @@ header {
     align-items: center;
 }
 
+#desc {
+    grid-row: 3;
+    grid-column: 1;
+
+    padding: 20px 10px;
+}
+
+#desc h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px;
+    font-family: 'titre';
+}
+
+#desc h3 {
+    font-size: 1.7rem;
+
+    font-family: 'titre';
+}
+
+#Apropos1 {
+    grid-row: 4;
+    grid-column: 1;
+
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items:baseline;
+    text-align: justify;
+}
+
+#Apropos1 h1 {
+    font-family: 'titre';
+    margin-bottom: 20px;
+}
+
+#Apropos1 ul li {
+    padding-bottom: 10px;
+}
+
+#Apropos2 {
+    grid-row: 5;
+    grid-column: 1;
+    padding: 0px 20px;
+}
+
+#Apropos2 ul li {
+    padding-bottom: 10px;
+}
 
 #un {
     grid-row: 1;
@@ -236,4 +286,34 @@ header {
     to {
         clip-path: inset(0 0 0 0); /* visible entièrement */
     }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: var(
+        --delay,
+        0s
+    ); /* Utilisation de la variable CSS pour le délai d'apparition */
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.disappear-up {
+    opacity: 0;
+    transform: translateY(-50px); /* Déplace l'élément vers le haut */
+    transition: opacity 1s ease, transform 1s ease; /* Durée de transition sans délai */
+}
+
+.reveal.disappear-down {
+    opacity: 0;
+    transform: translateY(50px); /* Déplace l'élément vers le bas */
+    transition: opacity 1s ease, transform 1s ease; /* Durée de transition sans délai */
 }
