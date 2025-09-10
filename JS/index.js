@@ -1,30 +1,32 @@
 gsap.registerPlugin(ScrollTrigger);
 
 function animateCasque() {
-  // Mesures dynamiques (au cas où la fenêtre change)
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
+  // récupérer le casque et la zone cible
+  const casque = document.querySelector(".casque");
+  const zone2 = document.getElementById("2");
 
-  // Distance à parcourir depuis le centre vers le coin bas‑droite
-  // Ici on “vise” ~40px du bord (à adapter à la taille de l'image)
-  const targetX = vw / 2 - 40;
-  const targetY = vh / 2 - 40;
+  // position de #2 par rapport à la page
+  const rect2 = zone2.getBoundingClientRect();
+  const scrollY = window.scrollY || window.pageYOffset;
 
-  // On crée/kill l'anim si on recalcul
-  if (window.casqueTween) { window.casqueTween.kill(); }
+  // centre vertical de #2
+  const targetY = rect2.top + scrollY + rect2.height / 2 - casque.height / 2;
+  // position horizontale (par ex. 40px du bord gauche)
+  const targetX = 40; 
 
-  window.casqueTween = gsap.to(".casque", {
-    // translation relative depuis le centre
-    x: targetX,
-    y: targetY,
-    scale: 0.5,                // 2× plus petit
+  // kill l’ancienne anim
+  if (window.casqueTween) window.casqueTween.kill();
+
+  window.casqueTween = gsap.to(casque, {
+    x: targetX - casque.getBoundingClientRect().left, // delta X
+    y: targetY - casque.getBoundingClientRect().top,  // delta Y
     ease: "none",
     scrollTrigger: {
       trigger: document.body,
       start: "top top",
-      end: "+=100%",           // 100vh
+      end: "+=100%", // sur 1 écran de scroll
       scrub: true,
-      // markers: true,        // décommenter pour debugger
+      // markers: true
       onRefresh: self => self.animation && self.animation.invalidate()
     }
   });
