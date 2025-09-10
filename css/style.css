@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'titre';
+    src: url('./../public/police/Audiowide-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'grandTitre';
+    src: url('./../public/police/Silkscreen-Regular.ttf');
+}
+
+body {
+    background-color: #F3F0ED;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    background-color: transparent;
+    border-bottom: solid 1px black;
+}
+
+#panier {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-left: solid 1px black;
+}
+
+#panier > * {
+    margin: 10px 30px;
+    cursor: pointer;
+}
+
+#btnPanier {
+    background-color: black;
+    color: #71706F;
+    padding: 5px 15px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#btnPanier > * {
+    margin: 0px 10px;
+}
+
+#btnPanier i {
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#menu {
+    background-color: black;
+    padding: 10px 20px;
+    color: #71706F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    cursor: pointer;
+}
+#menu i {
+    color: #71706F;
+}
+
+#titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#titre h1 {
+    font-family: 'titre';
+}
+
+#grandTitre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 5vw;          /* taille relative à la largeur de l’écran */
+    white-space: nowrap;       /* empêche le retour à la ligne */
+    font-family: 'grandTitre';
+}
