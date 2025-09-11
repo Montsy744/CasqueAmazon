@@ -2,6 +2,7 @@
 const menu = document.getElementById('menu');
 const compte = document.getElementById('compte');
 const panier = document.getElementById('panier');
+const ajoutPanier = document.getElementById('btnAjouterPanier');
 
 menu.addEventListener('click', () => { 
   window.open('https://www.amazon.fr/');
@@ -14,6 +15,11 @@ compte.addEventListener('click', () => {
 panier.addEventListener('click', () => {
   window.open('https://www.amazon.fr/-/en/gp/cart/view.html?ref_=nav_cart');
 });
+
+ajoutPanier.addEventListener('click', () => {
+  window.open('https://www.amazon.fr/AGV-22-06-Casque-Int%C3%A9gral-Homologu%C3%A9/dp/B0BJG3X29V/ref=sr_1_1_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2ID9HW212XCT6&dib=eyJ2IjoiMSJ9.BH70JooI41xUN8f8V1FU6vsN8EYdOC5R1OUhF7hDkzpwd_ojl383qoUxKWLCLiy6Fo1GB4qvcYkC6DhZzCPfCkVVzRZEoYMtg2qFQ3RnSYjiu5pLZ5IU_0XcGpcOPh_NBCSSr-WdG9ur5kRw2AWrvDpLkokEd40cJeHMKMPW3eN0xkoCvGOFlxI0AwZEQACHBtCttaBLmSICluGflFxUerAWiWHHJ-TSq8crbRNhwChOw6fYebEnvnZviZQ4miwGdzWWG5XgDkt9yLm_AP7HNPVoOFh5RozHBbV5RCEkg-A.8_JLqfjLmV1JmyDFvL-F9uQcPnfAjWGniA6Yyn1XAGQ&dib_tag=se&keywords=casque%2Bmoto&qid=1757586297&sprefix=casque%2Bmoto%2Caps%2C76&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1');
+});
+
 
 window.addEventListener("load", () => {
   const imgCasque = document.querySelector("#imgCasque");
